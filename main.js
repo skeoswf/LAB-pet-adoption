@@ -240,3 +240,23 @@ const pets = [
       imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
     }
   ];
+
+  let petWrapperContent = ""; 
+  const petWrapper = document.querySelector("#petWrapper");
+
+
+  
+  
+ for (let i = 0; i < pets.length; i++) {
+  petWrapperContent += 
+  `<div class="petCard">
+    <h1>emo cat</h1>
+    <img src="./emocat.jpg">
+    <h3>black</h3>
+    <p id="description">his soul is also black</p>
+    <p id="type"">cat</p>
+  </div>`
+}
+
+console.log(petWrapperContent)
+petWrapper.innerHTML = petWrapperContent
