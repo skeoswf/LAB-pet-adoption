@@ -242,13 +242,12 @@ const pets = [
   ];
 
 const petWrapper = document.querySelector("#petWrapper");
+
 const catFilterButton = document.querySelector("#filterCat")
 const dogFilterButton = document.querySelector("#filterDog")
 const dinoFilterButton = document.querySelector("#filterDino")
 const allFilterButton = document.querySelector("#noFilter")
 
-
-let petWrapperContent = ""; 
 
 const renderToDom = (array) => {
 
@@ -268,9 +267,9 @@ const renderToDom = (array) => {
   petWrapper.innerHTML = petWrapperContent
 }
 
-renderToDom(pets)
-
 const filterCat = () => {
+
+  let petWrapperContent = ""
 
   for (let i = 0; i < pets.length; i++) {
     if (pets[i].type === "cat") {
@@ -285,14 +284,14 @@ const filterCat = () => {
     }
   }
 
-
   petWrapper.innerHTML = petWrapperContent;
 }
 
 const filterDog = () => {
 
-  for (let i = 0; i < pets.length; i++) {
+  let petWrapperContent = ""
 
+  for (let i = 0; i < pets.length; i++) {
     if (pets[i].type === "dog") {
       petWrapperContent += 
     `<div class="petCard">
@@ -310,8 +309,9 @@ const filterDog = () => {
 
 const filterDino = () => {
 
+  let petWrapperContent = ""
+
   for (let i = 0; i < pets.length; i++) {
-    
     if (pets[i].type === "dino") {
       petWrapperContent += 
     `<div class="petCard">
@@ -324,11 +324,12 @@ const filterDino = () => {
     }
   }
 
-  petWrapper.innerHTML = ""
+
   petWrapper.innerHTML = petWrapperContent;
 }
 
-catFilterButton.addEventListener("click", filterCat)
-dogFilterButton.addEventListener("click", filterDog)
-dinoFilterButton.addEventListener("click", filterDino)
+catFilterButton.addEventListener("click", filterCat);
+dogFilterButton.addEventListener("click", filterDog);
+dinoFilterButton.addEventListener("click", filterDino);
+
 allFilterButton.addEventListener("click", renderToDom(pets));
