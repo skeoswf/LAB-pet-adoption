@@ -241,22 +241,94 @@ const pets = [
     }
   ];
 
-  let petWrapperContent = ""; 
-  const petWrapper = document.querySelector("#petWrapper");
+const petWrapper = document.querySelector("#petWrapper");
+const catFilterButton = document.querySelector("#filterCat")
+const dogFilterButton = document.querySelector("#filterDog")
+const dinoFilterButton = document.querySelector("#filterDino")
+const allFilterButton = document.querySelector("#noFilter")
 
 
+let petWrapperContent = ""; 
+
+const renderToDom = (array) => {
+
+  let petWrapperContent = "";
+  for (let i = 0; i < pets.length; i++) {
+
+    petWrapperContent += 
+    `<div class="petCard">
+      <h1>${pets[i].name}</h1>
+      <img src=${pets[i].imageUrl}>
+      <h3>${pets[i].color}</h3>
+      <p id="description">${pets[i].specialSkill}</p>
+      <p id="type"">${pets[i].type}</p>
+    </div>`;
+  }
   
-  
- for (let i = 0; i < pets.length; i++) {
-  petWrapperContent += 
-  `<div class="petCard">
-    <h1>emo cat</h1>
-    <img src="./emocat.jpg">
-    <h3>black</h3>
-    <p id="description">his soul is also black</p>
-    <p id="type"">cat</p>
-  </div>`
+  petWrapper.innerHTML = petWrapperContent
 }
 
-console.log(petWrapperContent)
-petWrapper.innerHTML = petWrapperContent
+renderToDom(pets)
+
+const filterCat = () => {
+
+  for (let i = 0; i < pets.length; i++) {
+    if (pets[i].type === "cat") {
+      petWrapperContent += 
+    `<div class="petCard">
+      <h1>${pets[i].name}</h1>
+      <img src=${pets[i].imageUrl}>
+      <h3>${pets[i].color}</h3>
+      <p id="description">${pets[i].specialSkill}</p>
+      <p id="type"">${pets[i].type}</p>
+    </div>`;
+    }
+  }
+
+
+  petWrapper.innerHTML = petWrapperContent;
+}
+
+const filterDog = () => {
+
+  for (let i = 0; i < pets.length; i++) {
+
+    if (pets[i].type === "dog") {
+      petWrapperContent += 
+    `<div class="petCard">
+      <h1>${pets[i].name}</h1>
+      <img src=${pets[i].imageUrl}>
+      <h3>${pets[i].color}</h3>
+      <p id="description">${pets[i].specialSkill}</p>
+      <p id="type"">${pets[i].type}</p>
+    </div>`;
+    }
+  }
+
+  petWrapper.innerHTML = petWrapperContent;
+}
+
+const filterDino = () => {
+
+  for (let i = 0; i < pets.length; i++) {
+    
+    if (pets[i].type === "dino") {
+      petWrapperContent += 
+    `<div class="petCard">
+      <h1>${pets[i].name}</h1>
+      <img src=${pets[i].imageUrl}>
+      <h3>${pets[i].color}</h3>
+      <p id="description">${pets[i].specialSkill}</p>
+      <p id="type"">${pets[i].type}</p>
+    </div>`;
+    }
+  }
+
+  petWrapper.innerHTML = ""
+  petWrapper.innerHTML = petWrapperContent;
+}
+
+catFilterButton.addEventListener("click", filterCat)
+dogFilterButton.addEventListener("click", filterDog)
+dinoFilterButton.addEventListener("click", filterDino)
+allFilterButton.addEventListener("click", renderToDom(pets));

@@ -1,3 +1,12 @@
+#filterSelect {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10vh;
+  margin-bottom: -50px;
+  width: 30%;
+}
+
 body {
   background-color: rgb(203, 219, 213);
 }
@@ -8,7 +17,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 45vw;
-  min-width: 500px;
+  min-width: 700px;
   height: 80vh;
   min-height: 890px;
   margin: 10vh auto 10vh auto;
@@ -22,6 +31,8 @@ body {
   width: 30%;
   height: 40%;
   border: 1px solid rgb(78, 15, 25);
+  border-radius: 10%;
+  overflow: hidden;
 }
 
 .petCard h1 {
@@ -45,9 +56,12 @@ body {
 
 #description {
   align-self: center;
+  text-align: center;
 }
 
 #type {
+  font-size: 20px;
+  margin-top: 10px;
   text-align: center;
   background-color: white;
   margin-bottom: 0px;
