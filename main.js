@@ -272,6 +272,8 @@ renderToDom(pets)
 
 const filterCat = () => {
 
+  petWrapperContent = ""
+
   for (let i = 0; i < pets.length; i++) {
     if (pets[i].type === "cat") {
       petWrapperContent += 
@@ -285,11 +287,12 @@ const filterCat = () => {
     }
   }
 
-
   petWrapper.innerHTML = petWrapperContent;
 }
 
 const filterDog = () => {
+
+  petWrapperContent = ""
 
   for (let i = 0; i < pets.length; i++) {
 
@@ -310,6 +313,8 @@ const filterDog = () => {
 
 const filterDino = () => {
 
+  petWrapperContent = ""
+
   for (let i = 0; i < pets.length; i++) {
     
     if (pets[i].type === "dino") {
@@ -324,7 +329,6 @@ const filterDino = () => {
     }
   }
 
-  petWrapper.innerHTML = ""
   petWrapper.innerHTML = petWrapperContent;
 }
 
