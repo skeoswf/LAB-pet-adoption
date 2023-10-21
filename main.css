@@ -1,22 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,400&family=Ubuntu:wght@300&display=swap');
+
+body {
+  background-color: lightpink;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 #filterSelect {
   margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 10vh;
   margin-bottom: -50px;
   width: 30%;
 }
 
-body {
-  background-color: rgb(203, 219, 213);
-}
-
 #petWrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  width: 45vw;
+  width: 50vw;
   min-width: 700px;
   height: 80vh;
   min-height: 890px;
@@ -25,20 +30,35 @@ body {
 }
 
 .petCard {
+  background-color: beige;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 30%;
   height: 40%;
-  border: 1px solid rgb(78, 15, 25);
-  border-radius: 10%;
+  border: 0px solid rgb(78, 15, 25);
   overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  border-right: 6px rgb(255, 57, 57) solid;
+  border-bottom: 6px rgb(255, 57, 57) solid;
+  border-radius: 4%;
+
+  transition: all ease 0.5s;
+}
+
+.petCard:hover {
+  box-shadow: 0px 0px 40px white;
 }
 
 .petCard h1 {
-  background-color: lightblue;
+  background-color: rgb(248, 77, 157);
   text-align: center;
   margin-top: 10px;
+  color: white;
+  font-family: Ubuntu;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  text-shadow: 0px 0px 3px white;
 }
 
 .petCard img {
@@ -48,23 +68,29 @@ body {
   height: 50%;
   min-height: 130px;
   max-height: 140px;
+  border-radius: 10px;
 }
 
 .petCard h3 {
+  font-family: Montserrat;
   align-self: center;
+  color: rgb(10, 110, 80);
 }
 
 #description {
+  font-family: Montserrat;
+  margin: -10px 10px auto 10px;
   align-self: center;
   text-align: center;
+  font-size: 90%;
 }
 
 #type {
-  font-size: 20px;
-  margin-top: 10px;
+  font-family: Montserrat;
+  font-size: 30px;
+  padding-top: 10px;
+  margin-bottom: 25px;
   text-align: center;
-  background-color: white;
-  margin-bottom: 0px;
-  height: 10%;
   width: 100%;
+  color: lightpink
 }
