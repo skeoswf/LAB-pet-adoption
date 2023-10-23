@@ -21,13 +21,13 @@ body {
 header button {
   background-color: beige;
   border-style: none;
-  padding: 15px;
+  padding: 7.5px;
   font-family: Ubuntu;
   font-size: large;
   color: red;
   text-shadow: 0px 0px 10px pink;
   border-radius: 10px;
-  min-
+  margin: 5px;
 
   transition: ease all 0.3s;
 }
@@ -63,10 +63,10 @@ header button:focus {
   height: 40%;
   border: 0px solid rgb(78, 15, 25);
   overflow: hidden;
-  font-family: Arial, Helvetica, sans-serif;
   border-right: 6px rgb(255, 57, 57) solid;
   border-bottom: 6px rgb(255, 57, 57) solid;
   border-radius: 4%;
+  cursor: pointer;
 
   transition: all ease 0.5s;
 }
@@ -152,4 +152,41 @@ input::placeholder {
 input:focus {
   outline-style: none;
   text-align: center;
+}
+
+#submit {
+  display: block;
+  margin: 10px auto auto auto;
+  background-color: rgb(248, 77, 157);
+  border-style: none;
+  padding: 5px 20px;
+  color: white;
+  font-family: Ubuntu;
+  text-shadow: 0px 0px 3px white;
+  border-radius: 10px;
+
+  transition: all ease 0.3s;
+}
+
+#submit:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+#delete { 
+  background-color: rgb(255, 57, 57);
+  border-style: none;
+  padding: 5px;
+  color: rgb(138, 0, 0);
+  text-shadow: 0px 0px 3px rgb(138, 0, 0);
+  font-family: Ubuntu;
+  width: 80%;
+  margin: 10px 10% 10px 10%;
+  border-radius: 10px;
+
+  transition: all ease 0.3s;
+}
+
+#delete:hover {
+  background-color: rgb(192, 42, 112);
 }

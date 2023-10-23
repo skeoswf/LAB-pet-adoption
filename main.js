@@ -242,6 +242,7 @@ const pets = [
   ];
 
 const petWrapper = document.querySelector("#petWrapper");
+const form = document.querySelector("form");
 
 const catFilterButton = document.querySelector("#filterCat")
 const dogFilterButton = document.querySelector("#filterDog")
@@ -263,6 +264,7 @@ const renderToDom = (array) => {
       <h3>${pets[i].color}</h3>
       <p id="description">${pets[i].specialSkill}</p>
       <p id="type"">${pets[i].type}</p>
+      <button id="delete" delete--${pets[i].id}>delete</button>
     </div>`;
   }
   
@@ -284,6 +286,7 @@ const filterCat = () => {
       <h3>${pets[i].color}</h3>
       <p id="description">${pets[i].specialSkill}</p>
       <p id="type"">${pets[i].type}</p>
+      <button id="delete" delete--${pets[i].id}>delete</button>
     </div>`;
     }
   }
@@ -305,6 +308,7 @@ const filterDog = () => {
       <h3>${pets[i].color}</h3>
       <p id="description">${pets[i].specialSkill}</p>
       <p id="type"">${pets[i].type}</p>
+      <button id="delete" delete--${pets[i].id}>delete</button>
     </div>`;
     }
   }
@@ -326,6 +330,7 @@ const filterDino = () => {
       <h3>${pets[i].color}</h3>
       <p id="description">${pets[i].specialSkill}</p>
       <p id="type"">${pets[i].type}</p>
+      <button id="delete" delete--${pets[i].id}>delete</button>
     </div>`;
     }
   }
@@ -345,6 +350,7 @@ const filterAll = () => {
       <h3>${pets[i].color}</h3>
       <p id="description">${pets[i].specialSkill}</p>
       <p id="type">${pets[i].type}</p>
+      <button id="delete" delete--${pets[i].id}>delete</button>
     </div>`;
     
   }
@@ -352,9 +358,30 @@ const filterAll = () => {
   petWrapper.innerHTML = petWrapperContent;
 }
 
-catFilterButton.addEventListener("click", filterCat)
-dogFilterButton.addEventListener("click", filterDog)
-dinoFilterButton.addEventListener("click", filterDino)
+const createPet = (event) => {
+  event.preventDefault()
+
+  const newPetObj = {
+        id: pets.length + 1,
+        name: document.querySelector("#petName").value + `!`,
+        color: document.querySelector("#petColor").value,
+        specialSkill: document.querySelector("#petSpecialSkill").value,
+        type: document.querySelector("#petType").value,
+        imageUrl: document.querySelector("#petImage").value,
+      }
+
+        pets.push(newPetObj);
+        renderToDom(pets);
+        form.reset()
+}
+
+console.log(pets);
+
+catFilterButton.addEventListener("click", filterCat);
+dogFilterButton.addEventListener("click", filterDog);
+dinoFilterButton.addEventListener("click", filterDino);
 allFilterButton.addEventListener("click", filterAll);
+
+form.addEventListener('submit', createPet);
 
 // tried making each loop into a function to satisfy DRY but it kept breaking. i will come will back to it.
