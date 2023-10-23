@@ -243,6 +243,7 @@ const pets = [
 
 const petWrapper = document.querySelector("#petWrapper");
 const form = document.querySelector("form");
+const petCardBox = document.querySelector(".petCard")
 
 const catFilterButton = document.querySelector("#filterCat")
 const dogFilterButton = document.querySelector("#filterDog")
@@ -264,7 +265,7 @@ const renderToDom = (array) => {
       <h3>${pets[i].color}</h3>
       <p id="description">${pets[i].specialSkill}</p>
       <p id="type"">${pets[i].type}</p>
-      <button id="delete" delete--${pets[i].id}>delete</button>
+      <button class="delete" id="delete--${pets[i].id}">delete</button>
     </div>`;
   }
   
@@ -286,7 +287,7 @@ const filterCat = () => {
       <h3>${pets[i].color}</h3>
       <p id="description">${pets[i].specialSkill}</p>
       <p id="type"">${pets[i].type}</p>
-      <button id="delete" delete--${pets[i].id}>delete</button>
+      <button class="delete" id="delete--${pets[i].id}">delete</button>
     </div>`;
     }
   }
@@ -308,7 +309,7 @@ const filterDog = () => {
       <h3>${pets[i].color}</h3>
       <p id="description">${pets[i].specialSkill}</p>
       <p id="type"">${pets[i].type}</p>
-      <button id="delete" delete--${pets[i].id}>delete</button>
+      <button class="delete" id="delete--${pets[i].id}">delete</button>
     </div>`;
     }
   }
@@ -330,7 +331,7 @@ const filterDino = () => {
       <h3>${pets[i].color}</h3>
       <p id="description">${pets[i].specialSkill}</p>
       <p id="type"">${pets[i].type}</p>
-      <button id="delete" delete--${pets[i].id}>delete</button>
+      <button class="delete" id="delete--${pets[i].id}">delete</button>
     </div>`;
     }
   }
@@ -350,7 +351,7 @@ const filterAll = () => {
       <h3>${pets[i].color}</h3>
       <p id="description">${pets[i].specialSkill}</p>
       <p id="type">${pets[i].type}</p>
-      <button id="delete" delete--${pets[i].id}>delete</button>
+      <button class="delete" id--"${pets[i].id}">delete</button>
     </div>`;
     
   }
@@ -375,7 +376,15 @@ const createPet = (event) => {
         form.reset()
 }
 
-console.log(pets);
+const deletePet = (event) => {
+  if(event.target.id.includes("delete")) {
+    const [, id] = event.target.id.split("--")
+    const index = pets.findIndex(obj => obj.id === Number(id))
+    pets.splice(index, 1)
+    renderToDom(pets)
+  }
+}
+
 
 catFilterButton.addEventListener("click", filterCat);
 dogFilterButton.addEventListener("click", filterDog);
@@ -384,4 +393,5 @@ allFilterButton.addEventListener("click", filterAll);
 
 form.addEventListener('submit', createPet);
 
+petWrapper.addEventListener("click", deletePet);
 // tried making each loop into a function to satisfy DRY but it kept breaking. i will come will back to it.
