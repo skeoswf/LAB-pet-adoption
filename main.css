@@ -173,7 +173,7 @@ input:focus {
   cursor: pointer;
 }
 
-#delete { 
+.delete { 
   background-color: rgb(255, 57, 57);
   border-style: none;
   padding: 5px;
@@ -187,7 +187,8 @@ input:focus {
   transition: all ease 0.3s;
 }
 
-#delete:hover {
+.delete:hover {
   background-color: rgb(192, 42, 112);
   color: beige;
+  cursor: pointer;
 }
