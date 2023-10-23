@@ -189,4 +189,5 @@ input:focus {
 
 #delete:hover {
   background-color: rgb(192, 42, 112);
+  color: beige;
 }
