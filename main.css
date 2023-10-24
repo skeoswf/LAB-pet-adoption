@@ -94,6 +94,7 @@ header button:focus {
   min-height: 130px;
   max-height: 140px;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 .petCard h3 {

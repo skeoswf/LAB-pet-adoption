@@ -342,21 +342,7 @@ const filterDino = () => {
 const filterAll = () => {
 
   petWrapperContent = ""
-
-  for (let i = 0; i < pets.length; i++) {
-      petWrapperContent +=
-    `<div class="petCard">
-      <h1>${pets[i].name}</h1>
-      <img src=${pets[i].imageUrl}>
-      <h3>${pets[i].color}</h3>
-      <p id="description">${pets[i].specialSkill}</p>
-      <p id="type">${pets[i].type}</p>
-      <button class="delete" id--"${pets[i].id}">delete</button>
-    </div>`;
-    
-  }
-
-  petWrapper.innerHTML = petWrapperContent;
+  renderToDom(pets)
 }
 
 const createPet = (event) => {
@@ -378,10 +364,11 @@ const createPet = (event) => {
 
 const deletePet = (event) => {
   if(event.target.id.includes("delete")) {
-    const [, id] = event.target.id.split("--")
-    const index = pets.findIndex(obj => obj.id === Number(id))
-    pets.splice(index, 1)
-    renderToDom(pets)
+    const [, id] = event.target.id.split("--");
+    const index = pets.findIndex(obj => obj.id === Number(id));
+    pets.splice(index, 1);
+    
+    renderToDom(pets);
   }
 }
 
