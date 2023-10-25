@@ -23,19 +23,19 @@
   <form>
     <h3>add your pet</h3>
     <div class="form-floating mb-3">
-      <input type="text" class="form-control" id="petName" placeholder="name" autocomplete="off">
+      <input type="text" class="form-control" id="petName" placeholder="name" autocomplete="off" oninvalid="this.setCustomValidity(`don't tell me you forgot their name!`)" oninput="setCustomValidity('')" required>
     </div>
     <div class="form-floating">
-      <input type="text" class="form-control" id="petColor" placeholder="color" autocomplete="off">
+      <input type="text" class="form-control" id="petColor" placeholder="color" autocomplete="off" oninvalid="this.setCustomValidity(`what color are they?`)" oninput="setCustomValidity('')" required>
     </div>
     <div class="form-floating">
-      <input type="text" class="form-control" id="petSpecialSkill" placeholder="special skill!" autocomplete="off">
+      <input type="text" class="form-control" id="petSpecialSkill" placeholder="special skill!" autocomplete="off" oninvalid="this.setCustomValidity(`there's always something special!`)" oninput="setCustomValidity('')" required>
     </div>
-    <div class="form-floating">
-      <input type="text" class="form-control" id="petType" placeholder="type" autocomplete="off"
+    <div class="form-floating" required>
+      <input type="text" class="form-control" id="petType" placeholder="type" autocomplete="off" oninvalid="this.setCustomValidity(`are they a...cat? dog? or dino?`)" oninput="setCustomValidity('')" required>
     </div>
-    <div class="form-floating">
-      <input type="text" class="form-control" id="petImage" placeholder="imageURL" autocomplete="off">
+    <div class="form-floating" required>
+      <input type="text" class="form-control" id="petImage" placeholder="imageURL" autocomplete="off" oninvalid="this.setCustomValidity(`give us an image link so we can see your cute pet!!`)" oninput="setCustomValidity('')" required>
       <button type="submit" id="submit">submit!</button>
     </div>
   </form>

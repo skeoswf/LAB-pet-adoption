@@ -250,14 +250,12 @@ const dogFilterButton = document.querySelector("#filterDog")
 const dinoFilterButton = document.querySelector("#filterDino")
 const allFilterButton = document.querySelector("#noFilter")
 
-
 let petWrapperContent = "";
 
 const renderToDom = (array) => {
 
   let petWrapperContent = "";
   for (let i = 0; i < pets.length; i++) {
-
     petWrapperContent += 
     `<div class="petCard">
       <h1>${pets[i].name}</h1>
@@ -382,3 +380,10 @@ form.addEventListener('submit', createPet);
 
 petWrapper.addEventListener("click", deletePet);
 // tried making each loop into a function to satisfy DRY but it kept breaking. i will come will back to it.
+
+
+const testFunction = () => {
+  return false;
+}
+
+console.log(testFunction());
