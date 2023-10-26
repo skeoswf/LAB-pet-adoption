@@ -153,7 +153,7 @@ const pets = [
     },
     {
       id: 20,
-      name: "emo cat",
+      name: "emo cat!",
       color: "black",
       specialSkill: "has a void of a soul",
       type: "cat",
@@ -270,7 +270,12 @@ const renderToDom = (array) => {
   petWrapper.innerHTML = petWrapperContent
 }
 
-renderToDom(pets)
+renderToDom(pets);
+
+justCats = false;
+justDogs = false;
+justDinos = false; 
+allPets = true;
 
 const filterCat = () => {
 
@@ -380,10 +385,3 @@ form.addEventListener('submit', createPet);
 
 petWrapper.addEventListener("click", deletePet);
 // tried making each loop into a function to satisfy DRY but it kept breaking. i will come will back to it.
-
-
-const testFunction = () => {
-  return false;
-}
-
-console.log(testFunction());
